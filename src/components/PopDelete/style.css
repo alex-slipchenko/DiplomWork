@@ -1,0 +1,43 @@
+.wrap__popDelete {
+    font-size: 16px;
+    font-weight: 700;
+    height: 146px;
+    width: 429px;
+    padding-top: 46px;
+    padding-bottom: 11px;
+    padding-right: 19px;
+    padding-left: 19px;
+    background-color: #fff;
+    text-align: center;
+
+}
+
+.wrap__popDelete h5 {
+    font-size: inherit;
+    font-weight: inherit;
+    color: #05BC52;
+    margin-bottom: 37px;
+}
+
+.wrapp__buttons {
+    width: 257px;
+    margin-left: auto;
+}
+
+.wrapp__buttons button {
+    font-size: inherit;
+    font-weight: inherit;
+    color: #fff;
+    background-color: #FB0000;
+    width: 115px;
+    height: 33px;
+    font-size: 16px;
+    border: transparent;
+    cursor: pointer;
+
+}
+
+.wrapp__buttons button:first-child {
+    background-color: #D8D5D5;
+    margin-right: 27px;
+}

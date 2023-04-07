@@ -1,0 +1,29 @@
+.wrap__table {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-collapse: collapse;
+}
+
+.myTable__header {
+    background-color: #0EC86F;
+}
+
+.myTable__body {
+    background-color: #D9D9D9;
+}
+
+th,
+td {
+    width: 145.33px;
+    height: 39px;
+    font-size: 16px;
+}
+
+th {
+    color: #726969;
+
+}

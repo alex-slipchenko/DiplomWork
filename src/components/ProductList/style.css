@@ -1,0 +1,18 @@
+tbody tr {
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #3CD78C;
+    color: #A58F8F;
+}
+
+td {
+    text-align: center;
+}
+
+
+td i {
+    color: #0f0f0f;
+    cursor: pointer;
+}

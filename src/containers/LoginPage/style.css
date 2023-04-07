@@ -1,0 +1,12 @@
+.Login {
+    background: #44B26F;
+    box-sizing: border-box;
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 168px;
+    padding-bottom: 168px;
+}
