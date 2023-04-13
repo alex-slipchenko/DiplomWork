@@ -6,6 +6,8 @@ import PasswordInput from '../paswordInput';
 import './style.css';
 import logo from './RozetkaCircle.svg';
 function MyForm() {
+    const [nameErr, setNameErr] = useState('');
+    console.log(nameErr);
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [isPasswordShown, setIsPasswordShown] = useState(false)
@@ -30,15 +32,17 @@ function MyForm() {
             });
             const json = await response.json();
             if (!json.token) {
+                setNameErr(json.message)
                 throw new Error(json.message)
             } else {
                 localStorage.setItem("token", json.token);
+                const myToken = localStorage.getItem('token');
+                (!myToken) ? Navigate('/login') : Navigate('/product');
             }
 
         }
         fetchData()
-        const myToken = localStorage.getItem('token');
-        (!myToken) ? Navigate('/login') : Navigate('/product');
+
 
     };
 
@@ -54,9 +58,11 @@ function MyForm() {
                 </div>
                 <div className='input_wrap'>
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="User Name" />
+                    <span className="erorr__name">{(nameErr === 'there is no name') ? nameErr : null}</span>
                 </div>
 
-                <PasswordInput isPasswordShown={isPasswordShown} setIsPasswordShown={setIsPasswordShown} value={password} onChange={(e) => setPassword(e.target.value)} />
+                <PasswordInput isPasswordShown={isPasswordShown} setIsPasswordShown={setIsPasswordShown} passErr={nameErr} value={password} onChange={(e) => setPassword(e.target.value)} />
+
                 <div className='input_wrap'> <button type="submit" className='form__button'>Login</button></div>
 
             </div>

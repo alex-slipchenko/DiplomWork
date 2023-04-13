@@ -1,0 +1,149 @@
+.mainCard div {
+    box-sizing: border-box;
+}
+
+.mainCard {
+    background: #44B26F;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.mainCard .wrap__rozetka {
+    margin: 0px 0px 16px 30px;
+}
+
+.mainCard .container {
+    background: #FFFFFF;
+    padding-top: 20px;
+    padding-left: 42px;
+    padding-bottom: 57px;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+.wrapp__contentcard {
+    padding-right: 150px;
+    padding-bottom: 57px;
+}
+
+.header-_card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.arrow__back {
+    font-size: 42px;
+    color: #000000;
+    margin-right: 50px;
+
+}
+
+.arrow__back svg {
+    display: block;
+}
+
+.tiitle__card {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+}
+
+@media (max-width: 1000px) {
+    .tiitle__card {
+        font-size: 24px;
+    }
+}
+
+.body__card {
+    display: flex;
+    margin-bottom: 70px;
+}
+
+.body__card img {
+    height: 268px;
+    width: 396px;
+    margin-right: 75px;
+}
+
+.wrap__rightside {
+    position: relative;
+}
+
+.wrap__rightside svg {
+    position: absolute;
+    top: 6px;
+    left: -40px;
+    color: #3CD78C;
+    font-size: 30px;
+}
+
+.wrap__rightside .availability {
+    font-size: 36px;
+    font-weight: 500;
+    color: #3CD78C;
+    margin-bottom: 26px;
+}
+
+.wrap__rightside .price {
+    margin-bottom: 26px;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.wrap__rightside .price span {
+    margin-bottom: 24px;
+    font-size: 36px;
+}
+
+.wrap__rightside .quantity {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.wrap__titleDiscription {
+    display: flex;
+    margin-bottom: 46px;
+}
+
+.footer__card span {
+    font-size: 30px;
+    font-weight: 500;
+    display: block;
+    margin-right: 10px;
+}
+
+.footer__card h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    color: #D9D9D9;
+    display: block;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.footer__card div {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+@media (max-width: 1000px) {
+    .wrap__titleDiscription span {
+        font-size: 24px;
+    }
+
+    .wrap__titleDiscription h1 {
+        font-size: 24px;
+    }
+
+
+    .footer__card div {
+        font-weight: 400;
+        font-size: 22px;
+    }
+}

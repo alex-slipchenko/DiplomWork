@@ -9,7 +9,6 @@
 }
 
 .wrap__rozetka {
-    border: 1px solid black;
     width: 240px;
     height: 40px;
 }
@@ -28,15 +27,31 @@
 }
 
 .input_wrap:nth-child(2) {
+    position: relative;
     margin-bottom: 45px;
 }
 
+.erorr__name {
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    bottom: -22px;
+    left: 10px;
+}
+
 .input_wrap:nth-child(3) {
+    position: relative;
     margin-bottom: 36px;
     margin-right: 4px;
 }
 
-
+.erorr__pasword {
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    bottom: -22px;
+    left: 10px;
+}
 
 .input_wrap input {
     width: 257px;

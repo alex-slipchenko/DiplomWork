@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import logo from '../../components/myForm/RozetkaCircle.svg';
 import { BsPerson, BsPlusLg } from "react-icons/bs";
 // components=====================
@@ -12,59 +12,49 @@ import { API_URL } from '../../constant';
 import { ListParam } from '../../constant/LIstParam';
 // css=================================
 import './style.css';
-
 function Product() {
-
     const [modalActive, setModalActive] = useState(null);
-
-
-
     // getProducts in table============= 
     const [isLoaded, setIsloaded] = useState(false);
     const [products, setProducts] = useState([]);
-
     useEffect(() => {
         if (!isLoaded) {
             getProducts();
         }
-
     }, [isLoaded]);
 
     const getProducts = async () => {
-        const request = await fetch(`${API_URL}/products`);
+        const request = await fetch(`${API_URL}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
         const data = await request.json();
         setProducts(data);
         setIsloaded(true);
     }
-
     //edit_product===========================================================
-
     const [editId, setEditId] = useState(null);
-
     const EditSubmit = async (e) => {
         e.preventDefault();
-
-        await fetch(`${API_URL}/products/${editId.id}`, {
-            method: 'PUT',
+        await fetch(`${API_URL}/${editId.id}`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
                 ,
             },
             body: JSON.stringify(editId),
         });
-
         setIsloaded(false);
         setModalActive(null);
-
     }
-
     //Add_product===========================================================
     const [addProduct, setAddProduct] = useState(ListParam);
 
     const AddSubmit = async (e) => {
         e.preventDefault();
-
-        await fetch(`${API_URL}/products`, {
+        await fetch(`${API_URL}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,11 +66,10 @@ function Product() {
         setModalActive(null);
         setAddProduct(ListParam)
     }
-
     //Delete_product===========================================================
     const DeleteSubmit = async (e) => {
         e.preventDefault();
-        await fetch(`${API_URL}/products/${editId}`, {
+        await fetch(`${API_URL}/${editId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -89,7 +78,6 @@ function Product() {
         });
         setIsloaded(false);
         setModalActive(null);
-
     }
 
     return (
@@ -97,7 +85,12 @@ function Product() {
             <div className='container'>
                 <div className='wrap__rozetka'><img src={logo} alt="logo" /></div>
                 <div className='wrap__button'>
-                    <ProductButton textButton={'Preview'} icon={<BsPerson />} activeButton={setModalActive} />
+                    <div>
+                        <Link to="/preview" className='bodyButton'>
+                            <BsPerson />
+                            Preview
+                        </Link>
+                    </div>
                     <ProductButton textButton={'Add product'} icon={<BsPlusLg />} activeButton={setModalActive} />
                 </div>
                 <div className='wrap__grid'>
@@ -123,10 +116,7 @@ function Product() {
                         <ProductForm titleForm={'Add product'} setActive={setModalActive} FormSubmit={AddSubmit} inputValue={addProduct} setInputValue={setAddProduct} />
                     </Modal>
                 )}
-
-
             </div>
-
         </div>
     );
 }

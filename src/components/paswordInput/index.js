@@ -4,7 +4,7 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import './style.css';
 
 function PasswordInput(props) {
-
+    console.log(props.passErr);
     const handleTogglePassword = () => props.setIsPasswordShown(!props.isPasswordShown);
 
     return (
@@ -16,8 +16,8 @@ function PasswordInput(props) {
                 {props.isPasswordShown ? <BsFillEyeFill className='eye' /> : <BsFillEyeSlashFill className='eye' />}
 
             </i>
+            <span className="erorr__pasword">{(props.passErr === 'Passwords do not match, try again') ? props.passErr : null}</span>
         </div>
-
 
     );
 }

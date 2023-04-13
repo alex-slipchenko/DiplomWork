@@ -1,4 +1,3 @@
-import './style.css';
 
 const ProductFormButtons = ({ text, type, click }) => {
     return (

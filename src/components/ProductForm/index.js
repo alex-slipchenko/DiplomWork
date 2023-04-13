@@ -7,7 +7,6 @@ import InputComponent from "../InputComponent";
 import ProductFormButtons from "../ProductFormButtons";
 import InputTextArea from "../InputTextArea";
 const ProductForm = ({ inputValue, FormSubmit, setActive, setInputValue, titleForm }) => {
-
     return (
         <div className='wrap__prodForm'>
             <form onSubmit={FormSubmit}>
@@ -18,11 +17,12 @@ const ProductForm = ({ inputValue, FormSubmit, setActive, setInputValue, titleFo
                     </i>
                 </div>
                 <div className="wrap__inputComponent">
-                    <InputComponent label="category" inputValue={inputValue} setInputValue={setInputValue} titleForm={titleForm} />
-                    <InputComponent label="name" inputValue={inputValue} setInputValue={setInputValue} titleForm={titleForm} />
-                    <InputComponent label="quantity" inputValue={inputValue} setInputValue={setInputValue} titleForm={titleForm} />
-                    <InputComponent label="price" inputValue={inputValue} setInputValue={setInputValue} titleForm={titleForm} />
-                    <InputTextArea label="description" inputValue={inputValue} setInputValue={setInputValue} titleForm={titleForm} />
+                    <InputComponent label="category" inputValue={inputValue} setInputValue={setInputValue} />
+                    <InputComponent label="name" inputValue={inputValue} setInputValue={setInputValue} />
+                    <InputComponent label="quantity" inputValue={inputValue} setInputValue={setInputValue} />
+                    <InputComponent label="price" inputValue={inputValue} setInputValue={setInputValue} />
+                    <InputComponent label="photo" inputValue={inputValue} setInputValue={setInputValue} />
+                    <InputTextArea label="description" inputValue={inputValue} setInputValue={setInputValue} />
                 </div>
                 <div className="wrapp__inputFormButton">
                     <ProductFormButtons text={'Cancel'} type="button" click={() => setActive(null)} />

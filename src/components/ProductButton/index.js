@@ -1,22 +1,14 @@
 
-import React from 'react';
-
 // components=====================
-
-
-
+import React from 'react';
 // css=================================
 import './style.css';
 
 function ProductButton({ icon, activeButton, textButton, }) {
 
-    const ChangeButton = () => textButton !== 'Preview' ? activeButton('add') : activeButton('preview');
-
-
-
     return (
         <div>
-            <button className='bodyButton' onClick={ChangeButton}>
+            <button className='bodyButton' onClick={() => activeButton('add')}>
                 {icon}
                 {textButton}
             </button>
